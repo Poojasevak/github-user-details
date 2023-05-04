@@ -1,6 +1,5 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import {defineIcon} from '../../assets/svg';
 
 const NoUsersCard = ({title, marginTop}) => {
@@ -8,15 +7,20 @@ const NoUsersCard = ({title, marginTop}) => {
     <View
       style={{
         marginTop: marginTop,
-        backgroundColor: 'pink',
+        backgroundColor: 'black',
         flex: 1,
         justifyContent: 'center',
         borderRadius: 20,
         alignItems: 'center',
       }}>
       {/* <Icon name="camera" size={30} color="#900" /> */}
-      <View>{defineIcon('lock')}</View>
-      <Text style={{color: 'white', fontSize: 16}}>{title}</Text>
+      <View style={{padding: 20}}>{defineIcon('search', 50, 50)}</View>
+      <Text style={{color: 'white', fontSize: 16, lineHeight: 20}}>
+        {title}
+      </Text>
+      <Text style={{color: 'white', fontSize: 12, lineHeight: 20}}>
+        Try with diff username
+      </Text>
     </View>
   );
 };

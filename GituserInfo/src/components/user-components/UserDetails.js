@@ -10,6 +10,20 @@ import {
 import reducer from '../../redux-store/reducer';
 import {useNavigation} from '@react-navigation/native';
 import NoUsersCard from '../ common-components/NoUsersCard';
+import {Colors} from '../../styles';
+
+const styles = StyleSheet.create({
+  detailsContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: 20,
+    alignItems: 'center',
+    borderWidth: 2,
+    borderRadius: 20,
+    padding: 20,
+    backgroundColor: Colors.BLACK,
+  },
+});
 
 const UserDetails = ({username, clickFollow = true}) => {
   const [userData, setUserData] = useState({a: 1});
@@ -104,9 +118,7 @@ const UserDetails = ({username, clickFollow = true}) => {
     !followersCount &&
     !followingsCount
   ) {
-    return (
-      <NoUsersCard marginTop={20} title={'No user Details Found'}></NoUsersCard>
-    );
+    return <NoUsersCard marginTop={20} title={'No user Found'}></NoUsersCard>;
   }
 
   return (
@@ -121,19 +133,7 @@ const UserDetails = ({username, clickFollow = true}) => {
       <Text>{userData.bio}</Text>
       <Text>{userData.location}</Text> */}
       {!isLoading && loginName !== '' ? (
-        <View
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: 20,
-            alignItems: 'center',
-            borderWidth: 2,
-            borderColor: 'red',
-            borderRadius: 20,
-            padding: 20,
-            elevation: 5,
-            backgroundColor: 'rgba(0, 0, 0, 1)',
-          }}>
+        <View style={styles.detailsContainer}>
           {profileImg ? (
             <Image
               style={{

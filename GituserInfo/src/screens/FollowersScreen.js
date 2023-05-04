@@ -1,7 +1,16 @@
-import {View, Text, ActivityIndicator} from 'react-native';
+import {View, Text, ActivityIndicator, StyleSheet} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import FollowersList from '../components/user-components/FollowersList';
-import axios from 'axios';
+import {Colors} from '../styles';
+import LinearGradient from 'react-native-linear-gradient';
+
+const styles = StyleSheet.create({
+  followerContainer: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: Colors.RED_SHADE,
+  },
+});
 
 const FollowersScreen = ({route, navigation}) => {
   const {uri, type} = route.params;
@@ -36,13 +45,17 @@ const FollowersScreen = ({route, navigation}) => {
     fetchFollowersData();
   }, [uri, type, navigation]);
   return (
-    <View style={{flex: 1, padding: 20, backgroundColor: '#F5F5F8'}}>
+    <LinearGradient
+      colors={['purple', 'white']}
+      style={styles.followerContainer}
+      start={{x: 0, y: 0}}
+      end={{x: 1, y: 1}}>
       {isLoading ? (
         <ActivityIndicator size="large" />
       ) : (
         <FollowersList users={followersList} navigate={navigation} />
       )}
-    </View>
+    </LinearGradient>
   );
 };
 

@@ -16,9 +16,45 @@ function App() {
     <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Follower" component={FollowersScreen} />
-          <Stack.Screen name="UserProfile" component={UserProfileScreen} />
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{
+              headerStyle: {
+                backgroundColor: 'purple',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
+          />
+          <Stack.Screen
+            name="Follower"
+            component={FollowersScreen}
+            options={{
+              headerStyle: {
+                backgroundColor: 'purple',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
+          />
+          <Stack.Screen
+            name="UserProfile"
+            component={UserProfileScreen}
+            options={{
+              headerStyle: {
+                backgroundColor: 'purple',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

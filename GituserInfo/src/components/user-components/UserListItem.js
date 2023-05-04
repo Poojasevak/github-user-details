@@ -1,26 +1,30 @@
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import React from 'react';
+import {Colors} from '../../styles';
+
+const styles = StyleSheet.create({
+  userListItem: {
+    borderWidth: 2,
+    borderColor: Colors.BLACK,
+    padding: 10,
+    borderRadius: 20,
+    backgroundColor: Colors.PRIMARY,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    color: Colors.WHITE,
+  },
+});
 
 const UserListItem = ({profileImg, username, followers, following}) => {
   return (
-    <View
-      style={{
-        borderWidth: 2,
-        borderColor: '#F7F7F7',
-        padding: 10,
-        borderRadius: 20,
-        backgroundColor: '#FFFFFF',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        elevation: 4,
-      }}>
+    <View style={styles.userListItem}>
       {profileImg ? (
         <Image
           style={{
-            width: 100,
-            height: 100,
+            width: 80,
+            height: 80,
             //   backgroundColor: 'pink',
             borderRadius: 100,
           }}
@@ -38,7 +42,7 @@ const UserListItem = ({profileImg, username, followers, following}) => {
           {' '}
         </View>
       )}
-      <Text style={{paddingLeft: 20}}>{username}</Text>
+      <Text style={{paddingLeft: 20, color: Colors.WHITE}}>{username}</Text>
     </View>
   );
 };
