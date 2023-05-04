@@ -13,7 +13,6 @@ const NoUsersCard = ({title, marginTop}) => {
         borderRadius: 20,
         alignItems: 'center',
       }}>
-      {/* <Icon name="camera" size={30} color="#900" /> */}
       <View style={{padding: 20}}>{defineIcon('search', 50, 50)}</View>
       <Text style={{color: 'white', fontSize: 16, lineHeight: 20}}>
         {title}

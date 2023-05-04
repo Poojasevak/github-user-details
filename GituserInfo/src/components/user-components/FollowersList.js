@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, TouchableOpacity, View, Text, Image} from 'react-native';
+import {FlatList, TouchableOpacity, View, Text, StyleSheet} from 'react-native';
 import NoUsersCard from '../ common-components/NoUsersCard';
 import UserListItem from './UserListItem';
 
