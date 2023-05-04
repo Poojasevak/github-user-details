@@ -89,6 +89,11 @@ const UserDetails = ({username, clickFollow = true}) => {
             setName('');
             setIsLoading(false);
           }
+        } else {
+          setLoginName('');
+          setProfileImg('');
+          setName('');
+          setIsLoading(false);
         }
       } catch (error) {
         // console.error('Err--->', error);
@@ -109,14 +114,7 @@ const UserDetails = ({username, clickFollow = true}) => {
     }
   }, [username]);
 
-  if (
-    !isLoading &&
-    loginName === '' &&
-    profileImg === '' &&
-    name === '' &&
-    followersCount === 0 &&
-    followingsCount === 0
-  ) {
+  if (!isLoading && loginName === '') {
     return <NoUsersCard marginTop={20} title={'No user Found'}></NoUsersCard>;
   }
 
